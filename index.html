@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Counter</title>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+    <h1 class="text-3xl font-bold text-indigo-600 mb-5">
+      Digital Counter
+    </h1>
+
+    <p id="count" class="text-6xl font-bold mb-6">0</p>
+
+    <button onclick="decrease()"
+      class="bg-red-500 text-white px-5 py-3 rounded-lg">
+      −
+    </button>
+
+    <button onclick="reset()"
+      class="bg-gray-500 text-white px-4 py-3 rounded-lg">
+      Reset
+    </button>
+
+    <button onclick="increase()"
+      class="bg-indigo-600 text-white px-5 py-3 rounded-lg">
+      +
+    </button>
+  </div>
+
+  
+  <script>
+    let count = 0;
+
+    function increase() {
+      count++;
+      document.getElementById("count").innerText = count;
+    }
+
+    function decrease() {
+      count--;
+      document.getElementById("count").innerText = count;
+    }
+
+    function reset() {
+      count = 0;
+      document.getElementById("count").innerText = count;
+    }
+  </script>
+
+</body>
+</html>
